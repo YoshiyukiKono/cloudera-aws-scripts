@@ -47,3 +47,11 @@ Execute `cluster_cloudera.sh` on your local environment.
 ```
 $ cluster_cloudera.sh 
 ```
+
+Upon successful completion of the above script, you would find a new instance is created on AWS Web Console.
+
+## Misc
+
+When you execute the above script, you would find `passwordless_<INSTANCE_NAME_AS_YOU_LIKE>_<DATA_TIME>` is generated locally.
+You can use this script to enable passwordless (no need to use PEM file) login. You don't have to mind it necessarily for an instance.
+This is a "sugar coating" function for when dealing with multiple instances in a script.
