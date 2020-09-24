@@ -2,7 +2,8 @@
 
 ## Specification
 
-This project is designed for [SingleNodeCDHCluster](https://github.com/YoshiyukiKono/SingleNodeCDHCluster).
+This project is designed for [SingleNodeCDHCluster](https://github.com/YoshiyukiKono/SingleNodeCDHCluster) (Please refer to the script and json files for more details)
+.
 
 The following specs are hard-coded.
 - Region: us-east-2
@@ -10,10 +11,9 @@ The following specs are hard-coded.
 - OS: CentOS 7
 - OS User: centos
 - Device Volume Size: 50G
-(Please refer to the script and json files for more details)
 
 ## Prerequisite
-You have an local environment where you can run AWS CLI as well as the AWS environment where you will create you Cloudera cluster.
+You have an local environment where you can run AWS CLI as well as the AWS environment where you will create your Cloudera cluster.
 
 ## Preparation
 
