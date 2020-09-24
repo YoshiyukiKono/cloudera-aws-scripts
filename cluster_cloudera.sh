@@ -2,18 +2,17 @@
 
 LANG=c date +%Y%m%d
 
-#KEY_NAME=~/ykono-pse-demo-tokyo
-KEY_NAME=~/ykono-cb-ohio
+KEY_NAME=~/%YOUR_KEY_NAME%
 
 CLI_INPUT_JSON=file://instance_cloudera.json
 
 TAG_DATE=`LANG=c date +%Y%m%d`
 TAG_DATE_TIME=`LANG=c date +%Y%m%d_%H%M`
 TAG_ENDDATE=`LANG=c date -v +7d +%m%d%Y`
-TAG_PROJECT=cdp_workshop
-TAG_OWNER=yoshiyuki.kono@couchbase.com
 
-INSTANCE_NAME=ykono-cluster-base
+TAG_PROJECT=%PROJECT_AS_YOU_LIKE%
+TAG_OWNER=%OWNER_AS_YOU_LIKE%
+INSTANCE_NAME=%INSTANCE_NAME_AS_YOU_LIKE%
 INSTANCE_FULLNAME="${INSTANCE_NAME}_${TAG_DATE_TIME}"
 
 INSTANCE_TYPE=t2.2xlarge
@@ -25,7 +24,6 @@ TAG_SPECS="ResourceType=instance,Tags=[\
 {Key=enddate,Value=${TAG_ENDDATE}},\
 {Key=project,Value=${TAG_PROJECT}}]"
 
-#REGION=ap-northeast-1
 REGION=us-east-2
 
 MSG_DRYRUN_EXPECTED="Request would have succeeded, but DryRun flag is set"
@@ -83,14 +81,6 @@ aws ec2 modify-instance-attribute \
 
 
 PUBLIC_IP=$(aws ec2 describe-instances --instance-id $INSTANCE_ID  --query 'Reservations[].Instances[].PublicIpAddress' --output text)
-
-FILENAME_LOGIN_SHELL="login_${INSTANCE_FULLNAME}.sh"
-
-# Genenate login shell
-cat <<EOF > $FILENAME_LOGIN_SHELL
-ssh centos@$PUBLIC_IP
-#ssh -i $KEY_NAME.pem centos@$PUBLIC_IP
-EOF
 
 chmod +x $FILENAME_LOGIN_SHELL
 #ssh centos@$PUBLIC_IP lsblk
