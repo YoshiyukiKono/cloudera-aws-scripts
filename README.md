@@ -1,11 +1,23 @@
 # Cloudera AWS Scripts
 
+## Specification
+
+This project is designed for [SingleNodeCDHCluster](https://github.com/YoshiyukiKono/SingleNodeCDHCluster).
+
+The following specs are hard-coded.
+- Region: us-east-2
+- Instance Type: t2.2xlarge
+- OS: CentOS 7
+- OS User: centos
+- Device Volume Size: 50G
+(Please refer to the script and json files for more details)
+
 ## Prerequisite
-- You have the environment where you can run AWS CLI
+You have an local environment where you can run AWS CLI as well as the AWS environment where you will create you Cloudera cluster.
 
 ## Preparation
 
-Please replace `%YOUR_...%` in `instance_cloudera.json` with values for your environment 
+Please replace `%YOUR_...%` in `instance_cloudera.json` with the values for your AWS environment.
 
 ```
     "KeyName": "%YOUE_KEY_NAME%",
@@ -14,4 +26,25 @@ Please replace `%YOUR_...%` in `instance_cloudera.json` with values for your env
     ],
 ...
     "SubnetId": "%YOUR_SUBNET_ID%",
+```
+
+Please replace `%YOUR_...%` in `cluster_cloudera.sh` with the values for your AWS environment.
+
+```
+KEY_NAME=~/%YOUR_KEY_NAME%
+```
+
+Please also replace `%..._AS_YOU_LIKE%` in `cluster_cloudera.sh` with any appropriate values.
+
+```
+TAG_PROJECT=%PROJECT_AS_YOU_LIKE%
+TAG_OWNER=%OWNER_AS_YOU_LIKE%
+INSTANCE_NAME=%INSTANCE_NAME_AS_YOU_LIKE%
+```
+
+## Run
+
+Execute `cluster_cloudera.sh` on your local environment.
+```
+$ cluster_cloudera.sh 
 ```
