@@ -1,0 +1,30 @@
+{
+    "ImageId": "ami-01e36b7901e884a10",
+    "KeyName": "ykono-cb-ohio",
+    "SecurityGroupIds": [
+         "sg-011150d0f1146ff26"
+    ],
+    "InstanceType": "t2.2xlarge",
+    "BlockDeviceMappings": [
+        {
+            "DeviceName": "/dev/sda1",
+            "Ebs": {
+                "VolumeSize": 50,
+                "DeleteOnTermination": true,
+                "VolumeType": "gp2"
+            },
+            "NoDevice": ""
+        }
+    ],
+    "Monitoring": {
+        "Enabled": false
+    },
+    "SubnetId": "subnet-03487b03e62cc50d3",
+    "DisableApiTermination": true,
+    "NetworkInterfaces": [
+        {
+            "DeviceIndex": 0,
+            "AssociatePublicIpAddress": true
+        }
+    ]
+}
