@@ -5,11 +5,22 @@
 This project is designed for [SingleNodeCDHCluster](https://github.com/YoshiyukiKono/SingleNodeCDHCluster) (Please refer to the script and json files for more details).
 
 The following specs are hard-coded.
-- Region: us-east-2
 - Instance Type: t2.2xlarge
-- OS: CentOS 7
+- OS: CentOS 7 (x86_64) - with Updates HVM
 - OS User: centos
 - Device Volume Size: 50G
+
+- Region: us-east-2
+
+### AMI ID
+You can find AMI ID of CentOS7 for your reagion from [link to AWS Marketplace](https://aws.amazon.com/marketplace/pp/B00O7WM7QW)
+- Click the `Continue To Subscrive` button
+- Click the `Continue To Configure` button
+- Chose your region from `Region` list.
+
+Sample:
+- Asia Pacific (Tokyo): ami-06a46da680048c8ae
+- US East (Ohio): ami-01e36b7901e884a10
 
 ## Prerequisite
 You have an local environment where you can run AWS CLI as well as the AWS environment where you will create your Cloudera cluster.
