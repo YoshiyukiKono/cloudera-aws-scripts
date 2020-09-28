@@ -2,7 +2,7 @@
 
 ## Specification
 
-This project is designed for [SingleNodeCDHCluster](https://github.com/YoshiyukiKono/SingleNodeCDHCluster) (Please refer to the script and json files for more details).
+This project is can be used to create an EC2 instance where you will setup a Cloudera cluster using the scripts maintained in the repository, [SingleNodeCDHCluster](https://github.com/YoshiyukiKono/SingleNodeCDHCluster) (Please refer to the script and json files for more details).
 
 The following specs are hard-coded.
 - Instance Type: t2.2xlarge
